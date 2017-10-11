@@ -1,0 +1,60 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/deeppurple-amber.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+}
+
+a { text-decoration: none; }
+
+body {
+  //background-color: #000 !important;
+  font-size: 15px;
+}
+
+.form-block {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 200px auto;
+}
+
+button, .mat-form-field{
+  width: 100%;
+}
+
+span.text {
+  float: left;
+}
+
+button.update {
+  width: 100%;
+  float: right;
+}
+
+.todo-list {
+  @extend .form-block;
+  margin: 10px auto;
+  width: 400px;
+}
+
+.todo-item {
+  display: flex !important;
+  flex-direction: column !important;
+
+  span {
+    margin-top: 10px;
+  }
+
+}
+
+
+
+.add-item-block {
+  @extend .form-block;
+  margin: 50px auto;
+  width: 400px;
+}

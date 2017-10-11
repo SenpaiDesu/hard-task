@@ -1,0 +1,30 @@
+<mat-card class="add-item-block">
+  <mat-card-title>ADD TODO</mat-card-title>
+  <mat-card-content>
+    <mat-form-field>
+      <input matInput type='text' placeholder='Some text..' 
+        [(ngModel)]='newItem.noteText'
+      >
+    </mat-form-field>
+    <mat-form-field *ngIf='isAdmin'>
+      <input matInput type='text' placeholder='Secure annotation..' 
+        [(ngModel)]='newItem.secretAnnotation'
+      >
+    </mat-form-field>
+    <button mat-raised-button (click)='onCreate()'>CREATE</button>
+  </mat-card-content>
+</mat-card>
+
+<mat-card class='todo-list'>
+  <mat-card-title>TODO LIST</mat-card-title>
+  <mat-card-content>
+    <mat-card class='margin-top-10' *ngFor='let item of notesList'>
+      <mat-card-content class='todo-item'>
+        <span class='text'>Note text: {{ item.noteText }}</span>
+        <span  *ngIf='isAdmin' class='text'>Secret: {{ item.secretAnnotation }}</span>
+        <span class='text'>Owner: {{ item.ownerId }}</span>
+        <button mat-raised-button class='update' color='warn' (click)='onUpdate(item._id)'>Update item</button>
+      </mat-card-content>
+    </mat-card>  
+  </mat-card-content>
+</mat-card> 
